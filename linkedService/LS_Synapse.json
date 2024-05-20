@@ -1,0 +1,12 @@
+{
+	"name": "LS_Synapse",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDW",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=fracto-synapse.sql.azuresynapse.net;initial catalog=pool;user id=sqluser",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDlBN0JBMERFLThENkQtNEJBNS05RTA4LUEzNzc4NTkyODAyMF83NDNmYTAyYS1iMDc4LTQ3ZTgtODAwOC1lNzdhMzk4MDRhODgiDQp9"
+		}
+	}
+}
