@@ -3,6 +3,32 @@
 	"properties": {
 		"activities": [
 			{
+				"name": "Table Lookup",
+				"type": "Lookup",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"sqlReaderQuery": "SELECT TABLE_SCHEMA, TABLE_NAME\nFROM INFORMATION_SCHEMA.TABLES \nWHERE TABLE_TYPE='BASE TABLE'\nAND TABLE_SCHEMA <> 'dbo';",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"dataset": {
+						"referenceName": "SQLDB",
+						"type": "DatasetReference"
+					},
+					"firstRowOnly": false
+				}
+			},
+			{
 				"name": "Table ForEach",
 				"type": "ForEach",
 				"dependsOn": [
@@ -21,7 +47,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy Single Table",
+							"name": "Table Copy",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -82,32 +108,6 @@
 							]
 						}
 					]
-				}
-			},
-			{
-				"name": "Table Lookup",
-				"type": "Lookup",
-				"dependsOn": [],
-				"policy": {
-					"timeout": "0.12:00:00",
-					"retry": 0,
-					"retryIntervalInSeconds": 30,
-					"secureOutput": false,
-					"secureInput": false
-				},
-				"userProperties": [],
-				"typeProperties": {
-					"source": {
-						"type": "AzureSqlSource",
-						"sqlReaderQuery": "SELECT TABLE_SCHEMA, TABLE_NAME\nFROM INFORMATION_SCHEMA.TABLES \nWHERE TABLE_TYPE='BASE TABLE'\nAND TABLE_SCHEMA <> 'dbo';",
-						"queryTimeout": "02:00:00",
-						"partitionOption": "None"
-					},
-					"dataset": {
-						"referenceName": "SQLDB",
-						"type": "DatasetReference"
-					},
-					"firstRowOnly": false
 				}
 			}
 		],
