@@ -1,0 +1,9 @@
+{
+	"name": "fracto-ADF",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "46bc0abb-d5eb-477d-b1cc-683bd625b6e1",
+		"tenantId": "d8f581ba-cd62-4435-a55e-cf5033a86a97"
+	}
+}
