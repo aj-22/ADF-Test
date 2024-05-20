@@ -42,7 +42,10 @@
 									"type": "SqlDWSink",
 									"writeBehavior": "Insert",
 									"sqlWriterUseTableLock": false,
-									"tableOption": "autoCreate",
+									"tableOption": {
+										"value": "@concat(item().TABLE_SCHEMA,item().TABLE_NAME)",
+										"type": "Expression"
+									},
 									"disableMetricsCollection": false
 								},
 								"enableStaging": false,
