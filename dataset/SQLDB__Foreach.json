@@ -7,10 +7,12 @@
 		},
 		"parameters": {
 			"TABLE_NAME": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "Customer"
 			},
 			"TABLE_SCHEMA": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "SalesLT"
 			}
 		},
 		"annotations": [],
