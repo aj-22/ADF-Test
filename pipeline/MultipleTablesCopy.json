@@ -43,7 +43,7 @@
 									"writeBehavior": "Insert",
 									"sqlWriterUseTableLock": false,
 									"tableOption": {
-										"value": "@concat(item().TABLE_SCHEMA,item().TABLE_NAME)",
+										"value": "@concat(item().TABLE_SCHEMA,'.',item().TABLE_NAME)",
 										"type": "Expression"
 									},
 									"disableMetricsCollection": false
